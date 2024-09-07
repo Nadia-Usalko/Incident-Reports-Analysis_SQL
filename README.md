@@ -8,10 +8,12 @@ Let's imagine that the client for this case study is a start-up cruise company, 
 To complete this project I worked in:
 
 -DB Browser for SQLite
+-Tableau Public
 
 Attached you can find the csv. data as well as a project file of our analysis.
 
-Here's what we were able to present to our stakeholders as opportunitties for future improvements:
+Here are some of our findings that we were able to present to our stakeholders as opportunitties for future improvements.
+Illustrations were created in Tableau Public.
 
 + Top 10 Incidents reported, by category: most frequent issues that happend to guests and have a huge impact on the experience:
   
@@ -40,7 +42,7 @@ ORDER BY Total_reports_by_subcategory DESC
 ![image](https://github.com/user-attachments/assets/2c215c35-0ea7-48ec-b3f1-e43f90c3979b)
 
 
-+ Top 5 Closed Unresolved categories of incidents: STakeholders might want to have a look at improvements and follow up strategies in this area:
++ Top 5 Closed Unresolved categories of incidents: Stakeholders might want to have a look at improvements and follow up strategies in this area:
 
 ```
 SELECT
