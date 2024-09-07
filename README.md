@@ -56,7 +56,7 @@ GROUP BY Incident_Subcategory
 ORDER BY Incident_Category
 ```
 
-+ Let's calculate percentage of reports by Guest Type: Stakeholder wants to make sure our VIP guests are not facing major issues:
++ Percentage of reports by Guest Type: Stakeholder wants to make sure our VIP guests are not facing major issues:
 
 ```
 SELECT Guest_Type, ROUND(count (*) *100.0/sum(count(*)) over(),2) AS 'Percent_from_Total_Incidents'
@@ -65,3 +65,11 @@ GROUP BY Guest_Type
 ```
 
 ![image](https://github.com/user-attachments/assets/f21065b7-14fc-45d4-8cc1-81f8a2758f63)
+
++ Incident reports related to food allergies - our Stakeholder's priority is safety of their guests and they want to put effort to make it right:
+
+```
+SELECT count (*) AS Amount_of_incidents_related_to_Food_Allergies
+FROM Incident_Reports_Analysis_SQL
+WHERE Description LIKE "%allergy%" OR Description LIKE "%allergies%"
+```
