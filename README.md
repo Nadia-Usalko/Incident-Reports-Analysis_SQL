@@ -43,7 +43,7 @@ ORDER BY Total_reports_by_subcategory DESC
 ![image](https://github.com/user-attachments/assets/2c215c35-0ea7-48ec-b3f1-e43f90c3979b)
 
 
-+ Top 5 Closed Unresolved categories of incidents: Stakeholders might want to have a look at improvements and follow up strategies in this area:
++ Top 5 Closed Unresolved incidents by Subcategory: Stakeholders main goal is to look at improvements in the specific areas:
 
 ```
 SELECT
@@ -64,7 +64,8 @@ FROM Incident_Reports_Analysis_SQL
 GROUP BY Guest_Type
 ```
 
-![image](https://github.com/user-attachments/assets/f21065b7-14fc-45d4-8cc1-81f8a2758f63)
+![image](https://github.com/user-attachments/assets/9e2fd05b-699a-4007-8405-f9a02f1975af)
+
 
 + Incident reports related to food allergies - our Stakeholder's priority is safety of their guests and they want to put effort to make it right:
 
