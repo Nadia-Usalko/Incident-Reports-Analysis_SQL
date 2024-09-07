@@ -13,30 +13,32 @@ Attached you can find the csv. data as well as a project file of our analysis.
 Here's what we were able to present to our stakeholders as opportunitties for future improvements:
 
 + Top 10 Incidents reported, by category: most frequent issues that happend to guests and have a huge impact on the experience:
-  
+  ```
   SELECT COUNT (*) AS "Amount_of_Incidents",
 Incident_Category
 FROM Incident_Reports_Analysis_SQL
 GROUP BY Incident_Category
 ORDER BY "Amount_of_Incidents" DESC
 LIMIT 10
+```
 
 ![image](https://github.com/user-attachments/assets/d9f7c875-2bf4-426d-a125-a411e87a9bc5)
 
 + Most reported category is related to Cabin, we created a breakdown by subcategory. Stakeholders want to focus on this area to minimize the amount of guest complaints:
-
+```
 SELECT Incident_Subcategory, 
 count(*) AS Total_reports_by_Subcategory
 FROM Incident_Reports_Analysis_SQL
 WHERE Incident_Category = 'Cabin'
 GROUP BY Incident_Subcategory
 ORDER BY Total_reports_by_subcategory DESC
+```
 
 ![image](https://github.com/user-attachments/assets/2c215c35-0ea7-48ec-b3f1-e43f90c3979b)
 
 
 + Top 5 Closed Unresolved categories of incidents: STakeholders might want to have a look at improvements and follow up strategies in this area:
-
+```
  SELECT
  Incident_Category,
  Incident_Subcategory,
@@ -45,11 +47,12 @@ FROM Incident_Reports_Analysis_SQL
 WHERE Status = 'Closed-Unresolved'
 GROUP BY Incident_Subcategory
 ORDER BY Incident_Category
+```
 
 + Let's calculate percentage of reports by Guest Type: Stakeholder wants to make sure our VIP guests are not facing major issues:
-
+```
 SELECT Guest_Type, ROUND(count (*) *100.0/sum(count(*)) over(),2) AS 'Percent_from_Total_Incidents'
 FROM Incident_Reports_Analysis_SQL
 GROUP BY Guest_Type
-
+```
 ![image](https://github.com/user-attachments/assets/f21065b7-14fc-45d4-8cc1-81f8a2758f63)
