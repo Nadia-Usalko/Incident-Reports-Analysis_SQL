@@ -8,6 +8,7 @@ Let's imagine that the client for this case study is a start-up cruise company, 
 To complete this project I worked in:
 
 -DB Browser for SQLite
+
 -Tableau Public
 
 Attached you can find the csv. data as well as a project file of our analysis.
