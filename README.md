@@ -64,7 +64,8 @@ FROM Incident_Reports_Analysis_SQL
 GROUP BY Guest_Type
 ```
 
-![image](https://github.com/user-attachments/assets/9e2fd05b-699a-4007-8405-f9a02f1975af)
+![image](https://github.com/user-attachments/assets/ba837405-02a2-4ae6-a683-c490102825ef)
+
 
 
 + Incident reports related to food allergies - our Stakeholder's priority is safety of their guests and they want to put effort to make it right:
