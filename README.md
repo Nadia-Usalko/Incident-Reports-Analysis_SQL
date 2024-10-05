@@ -8,7 +8,7 @@ Attached you can find the csv. data as well as a project file of the analysis.
 This analysis will allow stakeholders understand trends and identify opportunities to increase guest satisfaction. 
 
 
-To complete this project I worked in:
+_To complete this project I worked in:_
 
 -DB Browser for SQLite
 
@@ -84,7 +84,7 @@ Output:
 ![image](https://github.com/user-attachments/assets/61ecee74-6855-47c0-b854-cdffb14a0483)
 
 
-Stakeholders might want to intriduce changes in customer approach to ensure every single issue gets resolved - 22 issues with no solution is not a great tendency for a business that is looking for loyal customers.
+Stakeholders might want to introduce changes to increase ability to resolve issues - 22 reports without a solution is not a great tendency for a business that is looking for loyal customers.
 
 5. Top 5 unresolved incidents by subcategory. In order to understand challenges of customer service agents, let's dive deeper into unresolved issues:
 
@@ -103,7 +103,7 @@ Output:
 
 Bar and Dining Experience are definitely the areas to pay close attention to.
 
-7. To give more insights to Bar team, let's display the descriptions of the reports related to Bar Experience for further investigation:
+7. To give more insights to Bar team, let's display complete descriptions of the reports related to Bar Experience for further investigation:
 
 ```ruby
 SELECT Cruise_Start_Date,
