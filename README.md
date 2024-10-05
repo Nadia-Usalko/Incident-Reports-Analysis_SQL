@@ -1,13 +1,12 @@
 
 # Incident-Reports-Analysis_SQL
 
-The following analysis summarizes synthetic data to define trends as well as opportunitites to improve the hotel operation based on customer feedback onboard a cruise ship.All the guest reports get recorded in the system, from where we are able to pull out the cruise start dates, room numbers, incident category and subcategory.
+The following analysis summarizes synthetic data to define trends as well as opportunitites to improve the hotel operation based on customer feedback onboard a cruise ship. All the guest reports get recorded in the system, from where we are able to pull out the cruise start dates, room numbers, incident category and subcategory.
 
 Attached you can find the csv. data as well as a project file of the analysis.
 
-This analysis will allow stakeholders to understand trends and identify opportunities to increase guest satisfaction. 
+This analysis will allow stakeholders understand trends and identify opportunities to increase guest satisfaction. 
 
-**Technologies**
 
 To complete this project I worked in:
 
@@ -20,33 +19,6 @@ Here are some of our findings that we were able to present to our stakeholders a
 Illustrations were created in Tableau Public.
 
 
-+ Top 10 Incidents reported, by category: most frequent issues that happend to guests and have a huge impact on the experience:
-  
-```ruby
-SELECT COUNT (*) AS "Amount_of_Incidents",
-Incident_Category
-FROM Incident_Reports_Analysis_SQL
-GROUP BY Incident_Category
-ORDER BY "Amount_of_Incidents" DESC
-LIMIT 10
-```
-
-![image](https://github.com/user-attachments/assets/d9f7c875-2bf4-426d-a125-a411e87a9bc5)
-
-+ Most reported category is related to Cabin, we created a breakdown by subcategory. Stakeholders want to focus on this area to minimize the amount of guest complaints:
-
-```ruby
-SELECT Incident_Subcategory, 
-count(*) AS Total_reports_by_Subcategory
-FROM Incident_Reports_Analysis_SQL
-WHERE Incident_Category = 'Cabin'
-GROUP BY Incident_Subcategory
-ORDER BY Total_reports_by_subcategory DESC
-```
-
-![image](https://github.com/user-attachments/assets/2c215c35-0ea7-48ec-b3f1-e43f90c3979b)
-
-
 1. Total amount of incident reports within the given time period:
 
 ```ruby
@@ -55,7 +27,7 @@ FROM Incident_Reports
 ```
 Output:
 
-![image](https://github.com/user-attachments/assets/0f3696e4-7593-4936-8804-d262a9929b75)
+![image](https://github.com/user-attachments/assets/4138059f-b6c9-47d6-8bb4-8a016baf118e)
 
 
 2. Top 10 categories reported by guests - the areas where stakeholders want to pay more attention to:
@@ -72,6 +44,8 @@ Output:
 
 ![image](https://github.com/user-attachments/assets/c75f4685-70aa-449c-8e9d-639749197ef9)
 
+![image](https://github.com/user-attachments/assets/499af07b-04bc-4e9e-8a17-81ea5e9b4ee2)
+
   
 3. As we discovered "Room" is the category guests are mostly concerned about. In order to gain deeper understanding of the issue, let's have a look at subcategories and the amount of reports:
 
@@ -84,7 +58,7 @@ GROUP BY Incident_Subcategory
 ORDER BY Total_Room_Incidents_by_Subcategory DESC
 ```
 
-Stakeholders are able to now look into the issues in detail and make conclusions on potential future improvements: the highest amount of guest complaints is about TV/Room Controls as well as Shower/Plumbing. Serious maintenance evaluation might be the next step to define the action plan.
+Stakeholders are now able to look into the issues in detail and make conclusions on potential future improvements: the highest amount of guest complaints is about TV/Room Controls as well as Shower/Plumbing. Serious maintenance evaluation might be the next step to define the action plan.
 
 ![image](https://github.com/user-attachments/assets/41d238d1-0326-46f5-9993-b0c7d74c4348)
 
@@ -144,7 +118,7 @@ WHERE Status = 'Closed-Unresolved' AND Incident_Category = 'Bar Experience'
 ORDER BY Cruise_Start_Date
 ```
 
-8. Incident reports related to food allergies - our Stakeholder's priority is safety of their guests and they want to put effort to make it right:
+8. Incident reports related to food allergies - Stakeholder's priority is safety of their guests and they want to put effort into making it right:
 
 ```ruby
 SELECT COUNT (*) AS Amount_of_Incidents_Related_to_Food_Allergies
@@ -156,7 +130,7 @@ Output:
 ![image](https://github.com/user-attachments/assets/272f651d-0ad8-4123-a30c-fef24b6c7597)
 
 
-9. Percentage of reports by Guest Type: Stakeholder wants to make sure our VIP guests are not facing major issues:
+9. Percentage of reports by Guest Type: Stakeholder wants to make sure that VIP guests are not facing major issues:
 
 ```ruby
 SELECT Guest_Type,
@@ -167,6 +141,8 @@ GROUP BY Guest_Type
 Output:
 
 ![image](https://github.com/user-attachments/assets/6150f047-01d8-4d27-9b7c-69297fc6bc85)
+
+![image](https://github.com/user-attachments/assets/304dcad6-fef7-40fa-a09d-295ab2cdcc94)
 
 
 The above analysis is giving insights to the operations team into improvement opportunites. 
