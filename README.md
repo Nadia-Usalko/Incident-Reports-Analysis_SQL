@@ -146,4 +146,4 @@ Output:
 
 
 The above analysis is giving insights to the operations team into improvement opportunites. 
-I hope this research was insightful. Feel free to [follow me on Linked-In](https://www.linkedin.com/in/Nadia-usalko/) and check [my Tableau profile](https://public.tableau.com/app/profile/nadezhda.usalko/vizzes).
+I hope this research was insightful. Feel free to [follow me on Linked-In](https://www.linkedin.com/in/Nadia-usalko/) and check [my Tableau profile](https://public.tableau.com/app/profile/nadia.usalko).
