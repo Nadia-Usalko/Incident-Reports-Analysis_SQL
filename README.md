@@ -21,7 +21,7 @@ Illustrations were created in Tableau Public.
 
 1. Total amount of incident reports within the given time period:
 
-```ruby
+```sql
 SELECT COUNT (*) AS Total_amount_of_incident_reports
 FROM Incident_Reports
 ```
@@ -32,7 +32,7 @@ Output:
 
 2. Top 10 categories reported by guests - the areas where stakeholders want to pay more attention to:
 
-```ruby
+```sql
 SELECT COUNT (*) AS Amount_of_Incidents_Reports,
 	Incident_Category
 FROM Incident_Reports
@@ -49,7 +49,7 @@ Output:
   
 3. As we discovered "Room" is the category guests are mostly concerned about. In order to gain deeper understanding of the issue, let's have a look at subcategories and the amount of reports:
 
-```ruby
+```sql
 SELECT Incident_Subcategory,
 	COUNT (*) AS Total_Room_Incidents_by_Subcategory
 FROM Incident_Reports
@@ -65,7 +65,7 @@ Stakeholders are now able to look into the issues in detail and make conclusions
 
 4. In order to clean up the data let's correct a few lines: some reports still show "Assigned" status, however guests already left. We are going to update the status to "Closed-Unresolved":
 
-```ruby
+```sql
 UPDATE Incident_Reports
 SET Status = 'Closed-Unresolved'
 WHERE Status = 'Assigned'
@@ -73,7 +73,7 @@ WHERE Status = 'Assigned'
 
 Let's find out the status of all these reports:
 
-```ruby
+```sql
 SELECT COUNT (*) AS Amount_of_Reports,
 	Status
 FROM Incident_Reports
@@ -88,7 +88,7 @@ Stakeholders might want to introduce changes to increase ability to resolve issu
 
 5. Top 5 unresolved incidents by subcategory. In order to understand challenges of customer service agents, let's dive deeper into unresolved issues:
 
-```ruby
+```sql
 SELECT Incident_Category,
 	Incident_Subcategory,
 	Status
@@ -105,7 +105,7 @@ Bar and Dining Experience are definitely the areas to pay close attention to.
 
 7. To give more insights to Bar team, let's display complete descriptions of the reports related to Bar Experience for further investigation:
 
-```ruby
+```sql
 SELECT Cruise_Start_Date,
 	Incident_Category,
 	Incident_Subcategory,
@@ -120,7 +120,7 @@ ORDER BY Cruise_Start_Date
 
 8. Incident reports related to food allergies - Stakeholder's priority is safety of their guests and they want to put effort into making it right:
 
-```ruby
+```sql
 SELECT COUNT (*) AS Amount_of_Incidents_Related_to_Food_Allergies
 FROM Incident_Reports
 WHERE Description LIKE "%allergy%" OR Description LIKE "%allergies%"
@@ -132,7 +132,7 @@ Output:
 
 9. Percentage of reports by Guest Type: Stakeholder wants to make sure that VIP guests are not facing major issues:
 
-```ruby
+```sql
 SELECT Guest_Type,
 ROUND(COUNT(*)*100.00/sum(count(*)) over(),2) AS Percent_of_reports
 FROM Incident_Reports
